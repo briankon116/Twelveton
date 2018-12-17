@@ -90,7 +90,7 @@ class TwelveTone:
 		notes = [element for element in elements if 'choosenNote' in element]
 		notes = [int(note.split(',')[-1].split(')')[0]) - 25 for note in notes]
 		
-		subprocess.call('xsb --noprompt --nobanner --quietload -e "consult(validation),validate(%s,%d,%s),halt."' % (str(self.args.ToneRow), self.args.length, notes), shell=True)
+		subprocess.call('xsb --noprompt --nobanner --quietload -e "consult(validation),validate(%s,%d,%s),halt."' % (str(self.args.ToneRow), len(notes), notes), shell=True)
 		
 		f = open('antonOutput')
 		line = f.readline()

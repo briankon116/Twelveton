@@ -1,2 +1,26 @@
 Thank you for using the Twelveton music composition tool! Twelveton uses XSB Prolog to generate 12-Tone compositions. First, you will need the following requirements:
 * Python 2.7+
+* XSB Prolog
+* Lilysound (if you would like to create pdf scores of compoositions)
+* CSound (if you would like to create MP3s of compositions)
+
+Usage:
+python twelveton.py [-h] [-c] [-v VALIDATE] [-o OUTPUTFILE]
+                    [--antonOutput ANTONOUTPUT] [-l LENGTH]
+                    [ToneRow]
+
+positional arguments:
+  ToneRow               Tone row to use for either composing or verifying. Ex: [1,5,6,7,2,3,9,4,10,11,0,8]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c, --compose         Set program in compose mode to generate new twelve tone piece
+  -v VALIDATE, --validate VALIDATE
+                        Validate an existing composition from a file
+  -o OUTPUTFILE, --outputFile OUTPUTFILE
+                        Output file location
+  --antonOutput ANTONOUTPUT
+                        Format to output from anton. Options are: human,
+                        lilypond, csound
+  -l LENGTH, --length LENGTH
+                        Length of song to generate if in compose mode. Necessary when using either compose mode
